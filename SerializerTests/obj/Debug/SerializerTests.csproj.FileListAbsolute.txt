@@ -1,0 +1,8 @@
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\bin\Debug\SerializerTests.exe.config
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\bin\Debug\SerializerTests.exe
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\bin\Debug\SerializerTests.pdb
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\bin\Debug\IdeaTests.exe
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\bin\Debug\IdeaTests.pdb
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\obj\Debug\SerializerTests.csprojResolveAssemblyReference.cache
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\obj\Debug\SerializerTests.exe
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\SerializerTests\obj\Debug\SerializerTests.pdb

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.3
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaTests", "IdeaTests\IdeaTests.csproj", "{E028C18C-50AD-40FE-BC1A-0E8FA4EA8F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializerTests", "SerializerTests\SerializerTests.csproj", "{936DF780-BE3C-4BC0-81B4-305B83A37C28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E028C18C-50AD-40FE-BC1A-0E8FA4EA8F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E028C18C-50AD-40FE-BC1A-0E8FA4EA8F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E028C18C-50AD-40FE-BC1A-0E8FA4EA8F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E028C18C-50AD-40FE-BC1A-0E8FA4EA8F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936DF780-BE3C-4BC0-81B4-305B83A37C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936DF780-BE3C-4BC0-81B4-305B83A37C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936DF780-BE3C-4BC0-81B4-305B83A37C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936DF780-BE3C-4BC0-81B4-305B83A37C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
