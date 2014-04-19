@@ -1,0 +1,10 @@
+**/*.exe
+**/*.dll
+**/*.pdb
+*.exe
+*.dll
+*.pdb
+[Dd]ebug*/
+[Rr]elease*/
+[Bb]in
+[Oo]bj
