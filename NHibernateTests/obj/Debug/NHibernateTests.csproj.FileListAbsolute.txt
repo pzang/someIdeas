@@ -10,4 +10,3 @@ C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\bin\Debug
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\obj\Debug\NHibernateTests.exe
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\obj\Debug\NHibernateTests.pdb
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\bin\Debug\NUnit.Framework.dll
-C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\obj\Debug\NHibernateTests.csprojResolveAssemblyReference.cache
