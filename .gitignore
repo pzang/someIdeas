@@ -1,2 +1,6 @@
 /**/*.exe
 /**/*.dll
+/**/*.pdb
+*.exe
+*.dll
+*.pdb

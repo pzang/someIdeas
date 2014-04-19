@@ -1,10 +1,10 @@
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\IdeaTests.exe.config
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\IdeaTests.exe
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\IdeaTests.pdb
-C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\obj\Debug\IdeaTests.exe
-C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\obj\Debug\IdeaTests.pdb
-C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\NUnit.Framework.dll
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\NUnit.Framework.dll
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\bin\Debug\HtmlAgilityPack.xml
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\obj\Debug\IdeaTests.csprojResolveAssemblyReference.cache
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\obj\Debug\IdeaTests.exe
+C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\IdeaTests\obj\Debug\IdeaTests.pdb
