@@ -18,8 +18,8 @@ namespace SerializerTests
 			Console.WriteLine("Hello World!");
 			
 			// TODO: Implement Functionality Here
-			IdeaTests.ObjectContainer.AddMyException(new Exception("i add an exception here"));
-			IdeaTests.ObjectContainer.AddMyException(new EntryPointNotFoundException("add an entrypointNotFoundException"));
+			IdeaTests.ExceptionContainer.AddMyException(new Exception("i add an exception here"));
+			IdeaTests.ExceptionContainer.AddMyException(new EntryPointNotFoundException("add an entrypointNotFoundException"));
 			IdeaTests.Program.Serialize();
 			Thread.Sleep(1000);
 			IdeaTests.Program.Deserialize();
