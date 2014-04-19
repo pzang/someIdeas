@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NHibernate.Caches.SysCache3</id>
+    <version>1.0.4</version>
+    <title>NHibernate.Caches.SysCache3</title>
+    <authors>romis2012</authors>
+    <owners>romis2012</owners>
+    <projectUrl>https://github.com/romis2012/NHibernate.Caches.SysCache3</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NHibernate 2nd level cache provider that uses System.Runtime.Caching.MemoryCache.
+Supports SqlChangeMonitor and HostFileChangeMonitor. 
+Does not depend on System.Web.dll</description>
+    <summary>NHibernate 2nd level cache provider that uses System.Runtime.Caching.MemoryCache.
+Supports SqlChangeMonitor and HostFileChangeMonitor. 
+Does not depend on System.Web.dll</summary>
+    <releaseNotes>fixed some minor bugs</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>NHibernate ORM DataBase DAL ObjectRelationalMapping</tags>
+    <dependencies>
+      <dependency id="NHibernate" version="3.0.0.4000" />
+    </dependencies>
+    <references>
+      <reference file="NHibernate.Caches.SysCache3.dll" />
+    </references>
+  </metadata>
+</package>

@@ -19,9 +19,11 @@ namespace NHibernateTests.model
 		
 	}
 	
-	public class StandAloneMap : ClassMap<StandAlone> 
+	public class StandAloneMap : ClassMap<StandAlone>
 	{
 		public StandAloneMap(){
+			//base.Cache.NonStrictReadWrite().Region("FiveSecondTimeInterval");
+			Cache.NonStrictReadWrite().Region("ExpireAfterCertainTime");
 			Id(x => x.Id);
 			Map(x => x.Name);
 			Table("StandAlone");

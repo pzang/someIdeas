@@ -12,6 +12,8 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
+using NHibernate.Caches.SysCache2;
+
 namespace NHibernateTests.model
 {
 public class NHibernateSession
@@ -31,17 +33,18 @@ public class NHibernateSession
 
         private static void InitializeSessionFactory()
         {
-        	_sessionFactory = Fluently.Configure().Cache(x => { x.UseSecondLevelCache();})
+        	_sessionFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008
                   .ConnectionString(
-                  @"Data Source=.\SQL2008EXPRESS;Initial Catalog=TestDB;Integrated Security=True;") // Modify your ConnectionString
+                  @"Data Source=.\SQLEXPRESS;Initial Catalog=testHibernate;Integrated Security=True;") // Modify your ConnectionString
         		          .ShowSql()
                 )
                 .Mappings(m =>
                           m.FluentMappings
-                              .AddFromAssemblyOf<Program>())
-                .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                                                .Create(true, true))
+                          .AddFromAssemblyOf<Program>())
+        		.Cache( c => c.ProviderClass<SysCacheProvider>().UseSecondLevelCache().UseQueryCache())
+        		.ExposeConfiguration(cfg => new SchemaExport(cfg)
+                                                .Create(false, false))
                 .BuildSessionFactory();
         }
 

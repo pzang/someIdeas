@@ -10,3 +10,17 @@ C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\bin\Debug
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\obj\Debug\NHibernateTests.exe
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\obj\Debug\NHibernateTests.pdb
 C:\Users\Pat\Documents\SharpDevelop Projects\IdeaTests\NHibernateTests\bin\Debug\NUnit.Framework.dll
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernateTests.exe.config
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernateTests.exe
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernateTests.pdb
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\FluentNHibernate.dll
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\Iesi.Collections.dll
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernate.dll
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NUnit.Framework.dll
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\FluentNHibernate.xml
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\Iesi.Collections.xml
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernate.xml
+C:\Users\Pat\git\someIdeas\NHibernateTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Pat\git\someIdeas\NHibernateTests\obj\Debug\NHibernateTests.exe
+C:\Users\Pat\git\someIdeas\NHibernateTests\obj\Debug\NHibernateTests.pdb
+C:\Users\Pat\git\someIdeas\NHibernateTests\bin\Debug\NHibernate.Caches.SysCache2.dll

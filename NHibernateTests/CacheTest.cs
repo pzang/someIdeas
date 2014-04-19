@@ -20,7 +20,8 @@ namespace NHibernateTests
 	[TestFixture]
 	public class CacheTest
 	{
-		[SetUp]
+		
+		//	[SetUp]
 		public void setup(){
 			using (var session = NHibernateSession.OpenSession()){
 				using (var tran = session.BeginTransaction()){
@@ -54,7 +55,7 @@ namespace NHibernateTests
 			
 			using (var session = NHibernateSession.OpenSession()){
 				using (var tran = session.BeginTransaction()){
-					var allParent = session.CreateCriteria<Parent>().List<Parent>();
+					var allParent = session.CreateCriteria<Parent>().SetCacheable(true).List<Parent>();
 					foreach (var e in allParent) {
 						//Console.Write(e.Id);
 					}
@@ -106,12 +107,13 @@ namespace NHibernateTests
 		}
 		
 		public long IndepHibernate(){
-			Console.WriteLine("********************************* FIRST LOAD STARTED ***********************");
+			Console.WriteLine("********************************* Hibernate LOAD STARTED ***********************");
 			long start = DateTime.Now.Ticks;
 			
 			using (var session = NHibernateSession.OpenSession()){
 				using (var tran = session.BeginTransaction()){
-					var allParent = session.CreateCriteria<StandAlone>().List<StandAlone>();
+					var allParent = session.CreateCriteria<StandAlone>()
+						.SetCacheable(true).List<StandAlone>();
 					foreach (var e in allParent) {
 						
 						//Console.Write(e.Id);
@@ -120,35 +122,18 @@ namespace NHibernateTests
 				}
 			}
 			long end = DateTime.Now.Ticks;
-			Console.WriteLine("********************************* FIRST LOAD ENDED ***********************");
+			Console.WriteLine("********************************* Hibernate LOAD ENDED ***********************");
 			return end-start;
 			
 		}
 		
-		public long IndepHQL(){
-			Console.WriteLine("********************************* SQL LOAD STARTED ***********************");
-			long start = DateTime.Now.Ticks;
-			using (var session = NHibernateSession.OpenSession()){
-				using (var tran = session.BeginTransaction()){
-					var all = session.CreateSQLQuery(@"select {l.*} from [TestDB].[dbo].[StandAlone] as l");
-					all.AddEntity("l", typeof(Parent));
-					foreach (var p in all.List<Parent>()) {
-						//Console.Write(p.ToString());
-					}
-					tran.Commit();
-				}
-			}
-			long end = DateTime.Now.Ticks;
-			Console.WriteLine("********************************* SQL LOAD ENDED ***********************");
-			return end-start;
-		}
 		public long IndepSQL(){
 			Console.WriteLine("********************************* SQL LOAD STARTED ***********************");
-			string connectionString = @"Data Source=.\SQL2008EXPRESS;Initial Catalog=TestDB;Integrated Security=True;";
+			string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=testHibernate;Integrated Security=True;";
 			long start = DateTime.Now.Ticks;
 			using (SqlConnection conn = new SqlConnection(connectionString)){
 				conn.Open();
-				SqlCommand command = new SqlCommand("select * from [TestDB].[dbo].[StandAlone]", conn);
+				SqlCommand command = new SqlCommand("select * from [testHibernate].[dbo].[StandAlone]", conn);
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read()) {
 					//	Console.WriteLine();
@@ -162,6 +147,56 @@ namespace NHibernateTests
 			Console.WriteLine("********************************* SQL LOAD ENDED ***********************");
 			return end-start;
 		}
+		
+		public long RandomQuerySQL (){
+			Console.WriteLine("********************************* SQL LOAD STARTED ***********************");
+			string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=testHibernate;Integrated Security=True;";
+			long start = DateTime.Now.Ticks;
+			using (SqlConnection conn = new SqlConnection(connectionString)){
+				conn.Open();
+				for(int i=0; i<1000000; i++){
+					SqlCommand command = new SqlCommand("select * from [testHibernate].[dbo].[StandAlone] WHERE Id="
+					                                    + new Random().Next(1, 9), conn);
+					SqlDataReader reader = command.ExecuteReader();
+					while (reader.Read()) {
+						//	Console.WriteLine();
+						StandAlone sa = new StandAlone();
+						sa.Id = (int)reader[0];
+						sa.Name = (string)reader[1];
+						//Console.Write(reader[i] + " , ");
+					}
+					reader.Close();
+				}
+			}
+			long end = DateTime.Now.Ticks;
+			Console.WriteLine("********************************* SQL LOAD ENDED ***********************");
+			return end-start;
+		}
+		
+		public long RandomHibernateQuery(){
+			Console.WriteLine("********************************* Hibernate Random STARTED ***********************");
+			long start = DateTime.Now.Ticks;
+			
+			using (var session = NHibernateSession.OpenSession()){
+//				using (var tran = session.BeginTransaction()){
+				for(int i=0; i<1000000; i++){
+					var allParent = session.CreateCriteria<StandAlone>()
+						.SetCacheable(true).SetCacheMode(NHibernate.CacheMode.Normal)
+						.Add(
+							NHibernate.Criterion.Restrictions.Eq("Id", new Random().Next(1, 9))
+						)
+						.List<StandAlone>();
+
+//					}
+//					tran.Commit();
+				}
+			}
+			long end = DateTime.Now.Ticks;
+			Console.WriteLine("********************************* Hibernate Random ENDED ***********************");
+			return end-start;
+			
+		}
+
 		[Test]
 		public void TestTime(){
 			long time1 = IndepHibernate();
@@ -172,6 +207,14 @@ namespace NHibernateTests
 			//Console.WriteLine(" HQL Load: " + time2);
 			Console.WriteLine(" SQL Load: " + time3);
 			
+			long cachetime = IndepHibernate();
+			Console.WriteLine(" Cached hibernate load: " + cachetime);
+			
+			long randSQL = RandomQuerySQL();
+			long randHibernate = RandomHibernateQuery();
+			
+			Console.WriteLine(" Random SQL : " + randSQL);
+			Console.WriteLine(" Random Hibernate: " + randHibernate);
 		}
 	}
 }
