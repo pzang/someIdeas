@@ -52,5 +52,9 @@ public class NHibernateSession
         {
             return SessionFactory.OpenSession();
         }
+        
+        public static ISessionFactory GetSessionFactory(){
+        	return _sessionFactory;
+        }
     }
 }

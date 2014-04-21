@@ -21,7 +21,7 @@ namespace NHibernateTests
 	public class CacheTest
 	{
 		
-		//	[SetUp]
+		//[SetUp]
 		public void setup(){
 			using (var session = NHibernateSession.OpenSession()){
 				using (var tran = session.BeginTransaction()){
@@ -197,6 +197,31 @@ namespace NHibernateTests
 			
 		}
 
+		
+		public void EvictTest(){
+			using (var session = NHibernateSession.OpenSession()){
+				for(int i=0; i<10000; i++){
+					var allParent = session.CreateCriteria<StandAlone>()
+						.SetCacheable(true).SetCacheMode(NHibernate.CacheMode.Normal)
+						.Add(
+							NHibernate.Criterion.Restrictions.Eq("Id", new Random().Next(1, 9))
+						)
+						.List<StandAlone>();
+					
+
+				}
+			}
+		}
+		
+		[Test]
+		public void SFEvictTest(){
+			EvictTest();
+			Console.WriteLine(" After first test, items are loaded already. Next test: " );
+			NHibernateSession.GetSessionFactory().Evict(typeof(StandAlone), 1);
+			NHibernateSession.GetSessionFactory().Evict(typeof(StandAlone), 2);
+			EvictTest();
+		}
+		
 		[Test]
 		public void TestTime(){
 			long time1 = IndepHibernate();
